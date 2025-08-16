@@ -1,0 +1,90 @@
+{% extends 'meal_web/index.html' %}
+{% load static %}
+
+{% block title %}Home - MealBox{% endblock %}
+
+{% block content %}
+
+<!-- Features -->
+<section class="features">
+    <h2>Features</h2>
+    <div class="container">
+        <div class="feature-box">
+            <img src="{% static 'meal_web/images/fresh_meals.jpg' %}" alt="Fresh Ingredients" class="feature-img" />
+            <h3>🍏 Fresh Ingredients</h3>
+            <p>We source the freshest produce to create healthy, delicious meals.</p>
+        </div>
+        <div class="feature-box">
+            <img src="{% static 'meal_web/images/diet_chart.png' %}" alt="Flexible Plans" class="feature-img" />
+            <h3>📦 Flexible Plans</h3>
+            <p>Choose a plan that fits your lifestyle, from weekly to monthly.</p>
+        </div>
+        <div class="feature-box">
+            <img src="{% static 'meal_web/images/fast_delivery.png' %}" alt="Fast Delivery" class="feature-img" style="width:70%" />
+            <h3>🚚 Fast Delivery</h3>
+            <p>Your meals are delivered to your doorstep, ready to enjoy.</p>
+        </div>
+    </div>
+</section>
+
+<hr class="hr_line">
+
+<!-- Popular Plans -->
+<section class="plans">
+        <div class="container">
+            <h2>Our Most Popular Plans</h2>
+            <div class="plan-cards">
+                <div class="plan">
+                    <img src="{% static 'meal_web/images/starter.jpg' %}" alt="Starter Plan" class="plan-img" />
+                    <h3>Starter Plan</h3>
+                    <p>Perfect for individuals. Get 5 meals/week.</p>
+                    <span class="price">$29/week</span>
+                    <a href="{% url 'subscribe' %}" class="btn">Choose Plan</a>
+                </div>
+
+                <div class="plan">
+                    <img src="{% static 'meal_web/images/family_plan.jpeg' %}" alt="family Plan" class="plan-img" />
+                    <h3>Family Plan</h3>
+                    <p>Meals for the whole family. 15 meals/week.</p>
+                    <span class="price">$79/week</span>
+                    <a href="{% url 'subscribe' %}" class="btn">Choose Plan</a>
+                </div>
+                <div class="plan">
+                    <img src="{% static 'meal_web/images/ultimate.jpg' %}" alt="premium Plan" class="plan-img" />
+                    <h3>Premium Plan</h3>
+                    <p>Unlimited meals + chef's specials.</p>
+                    <span class="price">$149/week</span>
+                    <a href="{% url 'subscribe' %}" class="btn">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<hr class="hr_line">
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial">
+                    <img src="{% static 'meal_web/images/sarah.jpeg' %}" alt="Sarah J." class="plan-img" style="width:80%"/>
+                    <p>"MealBox has completely changed my eating habits. So fresh and tasty!"</p>
+                    <span>- Sarah J.</span>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'meal_web/images/mark.jpg' %}" alt="Mark R." class="plan-img" />
+                    <p>"As a busy professional, this service is a lifesaver."</p>
+                    <span>- Mark R.</span>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'meal_web/images/priya.jpg' %}" alt="Priya K." class="plan-img" />
+                    <p>"My family loves the variety and quality of meals!"</p>
+                    <span>- Priya K.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
