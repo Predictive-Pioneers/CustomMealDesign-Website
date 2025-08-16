@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}MealBox{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'meal_web/css/style.css' %}" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="logo">🍽️ MealBox</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'subscribe' %}">Subscribe</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'my_subscription' %}">My Subscription</a></li>
+                    <li>
+                        <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fresh Meals Delivered To Your Door</h1>
+            <p>Healthy, customizable, and made just for you.</p>
+            <a href="{% url 'subscribe' %}" class="btn">Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 MealBox. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'meal_web/index.html' %}
+{% block content %}
+  <h2>Login</h2>
+  <form method="post" class="login_form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="login_btn">Login</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'meal_web/index.html' %}
+{% block content %}
+  <h2>Change Diet</h2>
+  <form method="post">
+    {% csrf_token %}
+    <select name="diet">
+      {% for value,label in choices %}
+        <option value="{{ value }}" {% if sub.diet_preference==value %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}

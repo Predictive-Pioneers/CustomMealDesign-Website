@@ -1,0 +1,25 @@
+{% extends 'meal_web/index.html' %}
+
+{% block title %}Weekly Menu{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Weekly Menu</h2>
+
+{% if menu %}
+  <p style ="color: #ff7f50;padding-left:20px;font-size:20px;"><strong>Week starting:</strong> {{ menu.week_start }}</p>
+
+ <div class="menu-grid">
+  {% for meal in meals %}
+  <div class="menu-card">
+    <img src="{{ meal.image.url }}" alt="{{ meal.name }}" class="menu-image">
+    <h3 class="meal-name">{{ meal.name }}</h3>
+    <p class="meal-diet">{{ meal.diet_type }}</p>
+    <p class="meal-description">{{ meal.description }}</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+  <p>No menu added yet. Admins: add a WeeklyMenu in admin panel.</p>
+{% endif %}
+{% endblock %}
