@@ -1,0 +1,607 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #fff, #fceeec);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: #ff6347;
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .btn {
+    background: white;
+    color: #ff6347;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size:15px;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1512058564366-18510be2db19') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #ff6347;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Features */
+.features {
+    background:#fef4f3;
+    padding: 10px 0;
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 25%;
+    min-width: 250px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.feature-img{
+    width: 45%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+
+/* Popular Plans */
+.plan-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.plan {
+    background: linear-gradient(to bottom, #fff, #ffddd6);
+    border-radius: 15px;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.plan:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.container h2{
+    text-align: center;
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+}
+
+.plan h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ff6347;
+}
+
+.plan p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.plan .price {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Highlight middle card */
+.plan:nth-child(2) {
+    background: linear-gradient(to bottom, #fff5f3, #ffeae6);
+    transform: scale(1);
+}
+
+/* Buttons */
+.plan .btn {
+    background: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255,99,71,0.3);
+}
+
+.plan .btn:hover {
+    background: #e5533d;
+    box-shadow: 0 6px 15px rgba(255,99,71,0.4);
+}
+
+.plan-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+
+.preview-btn {
+  margin-top: 10px;
+  border: none;
+  background: #ff6347;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.hr_line {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6347, #fcb69f);
+  margin: 15px auto 0px auto;
+  border-radius: 5px;      
+  width: 95%;               
+  max-width: 1500px;          
+  box-shadow: 0 2px 8px rgba(252, 182, 159, 0.7); 
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 30px 0;
+    background:#fef4f3;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonial {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    font-style: italic;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.testimonial p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    display: block;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+/* Footer */
+.footer {
+    background: #ff6347;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 15px;
+}
+
+.footer .footer-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+
+/*Menu page*/
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 20px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  border-color: #ff7f50;
+}
+
+.menu-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-image {
+  transform: scale(1.05);
+}
+
+.meal-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: #ff7f50;
+  font-weight: bold;
+}
+
+.meal-diet {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+.meal-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  min-height: 60px;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ff7f50, #ff4500);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.order-btn:hover {
+  background: linear-gradient(135deg, #ff4500, #ff7f50);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .menu-card {
+    padding: 15px;
+  }
+  .meal-name {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* My Subscription page */
+.subscription-details {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.subscription-details p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.subscription-details strong {
+    color: #222;
+}
+
+/* Button group styling */
+.subscription-actions {
+    margin-top: 12px;
+}
+
+.subscription-actions a {
+    margin-right: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Hover effects for buttons */
+.subscription-actions .btn-primary:hover {
+    background-color: #004085;
+}
+
+.subscription-actions .btn-warning:hover {
+    background-color: #d39e00;
+}
+
+.subscription-actions .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.table thead {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+}
+
+.table th, 
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.table th {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  color: #333;
+}
+
+.subscription-container {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.subscription-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.subscribe-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    color: #34495e;
+}
+
+.subscribe-form select, 
+.subscribe-form input[type="checkbox"] {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.subscribe-btn {
+    display: block;
+    width: 100%;
+    background: #27ae60;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.subscribe-btn:hover {
+    background: #219150;
+}
+
+
+/* Center the form on the page */
+.login_form {
+    max-width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.login_form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Labels */
+.login_form p label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input fields */
+.login_form input[type="text"],
+.login_form input[type="password"],
+.login_form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+.login_form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button styling */
+.login_form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login_form button:hover {
+    background-color: #45a049;
+}
+
